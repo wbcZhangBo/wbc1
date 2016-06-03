@@ -27,7 +27,7 @@ var students = [
 	{
 		userName : 'sdfgg',
 		name : '小乔',
-		age : 20,
+		age : 18,
 		gender : '男'
 	},
 	{
@@ -42,14 +42,22 @@ var students = [
 		age : 28,
 		gender : '男'
 	},
+	{
+		userName : 'geash',
+		name : '关兴',
+		age : 18,
+		gender : '男'
+	}
 ];
+
+var len = students.length;
 
 
 /*-----------------------------------------------------------*/
 // _.each用法    遍历
 
 _.each(obj, function(val, key) {
-//	console.log(key, val);
+	console.log(key, val);
 })
 
 // js方法
@@ -223,40 +231,117 @@ function con(n) {
 //_.pluck方法		萃取
 
 var plu = _.pluck(students, 'name');
-//console.log(plu)
+// console.log(plu)
+
+function pluc() {
+	var i, ert = [];
+	for (i=0; i<students.length; i++) {
+		ert.push(students[i].name)
+	}
+	return ert;
+}
+
+// console.log(pluc());
+
+/*-----------------------------------------------------------*/
+// _.sortBy方法  给list进行排序
 
 var sor = _.sortBy(students, 'age');
 //console.log(sor);
 
+var s = students.sort(function(age1, age2) {
+	return age1.age - age2.age;
+})
+
+// console.log(s);
+
+/*-----------------------------------------------------------*/
+// _.max方法   挑选list中的最大值
+
+var ma = _.max(students, 'age');
+// console.log(ma);
+
+function maa() {
+	var i, anm = 0, stuobj;
+	for (i=0; i<len; i++) {
+		if (students[i].age > anm) {
+			anm = students[i].age;
+			stuobj = students[i];
+		}
+	}
+	return stuobj;
+}
+// console.log(maa());
 
 
+/*-----------------------------------------------------------*/
+// _.min方法   挑选list中的最小值
 
+var mb = _.min(students, 'age');
+// console.log(mb);
 
+function mab() {
+	var i, num = 0, stuobjs;
+	for (i=0; i<len; i++) {
+		if (students[i].age > num) {
+			num = students[i].age;
+			stuobjs = students[i];
+		}
+		return (stuobjs);
+	}
+}
+// console.log(mab());
 
+/*-----------------------------------------------------------*/
+// _.groupBy方法   将一个集合分组为多个集合
 
+var grou = _.groupBy(arr, function(num) {
+	return Math.floor(num);
+})
+// console.log(grou);
 
+/*??????????????????????????????????????????????????????????*/
 
+/*-----------------------------------------------------------*/
+// _.indexBy方法   返回一个每一项索引的对象
 
+var ind = _.indexBy(students, 'name');
 
+// console.log(ind);
+/*-----------------------------------------------------------*/
+// _.countBy方法   返回一个集合中值得数目
 
+var cou = _.countBy(arr, function(num) {
+	return num % 2 == 0 ? 'even' : 'odd';
+})
 
+// console.log(cou);
 
+/*-----------------------------------------------------------*/
+// _.shuffle方法   返回一乱序的list副本
 
+var shu = _.shuffle(arr);
+// console.log(shu);
 
+/*-----------------------------------------------------------*/
+// _.sample 从集合中返回一个或多个随机数
 
+var samp = _.sample(arr, [3]);
+// console.log(samp)
 
+/*-----------------------------------------------------------*/
+// _.toArray  将集合转换成一个数组
 
+var toa = _.toArray(obj);
+// console.log(toa);
 
+/*-----------------------------------------------------------*/
+// _.size  返回集合的长度
 
+var sze = _.size(obj);
+// console.log(sze);
 
-
-
-
-
-
-
-
-
+/*=================数组函数==================================*/
 
 
 
