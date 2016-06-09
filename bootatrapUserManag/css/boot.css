@@ -1,0 +1,36 @@
+.agn {
+    width: 200px;
+    margin-left: 50px;
+}
+
+.bor {
+    margin-top: 20px;  
+}
+
+.form {
+    width: 500px;
+    margin: 35px auto;
+    display: none;
+}
+
+.on {
+    display: none;
+}
+
+
+.rotate {
+    position: fixed;
+    width: 215px;
+    height: 20px;
+    background-image: url('../img/039.gif');
+    top: 50%;
+    left: 50%;
+    margin-top: 70px;
+    margin-left: -70px;
+    z-index: 1px;
+}
+
+.rem {
+    width: 40px;
+    font-size: 12px;
+}
